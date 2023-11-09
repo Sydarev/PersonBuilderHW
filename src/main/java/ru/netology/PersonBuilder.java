@@ -20,12 +20,12 @@ public class PersonBuilder {
     }
 
     public PersonBuilder setAge(int age) throws IllegalArgumentException {
-        if (age <0) throw new IllegalArgumentException("Возраст не может быть отрицательным!");
+        if (age < 0) throw new IllegalArgumentException("Возраст не может быть отрицательным!");
         this.age = age;
         return this;
     }
 
-    public Person build() throws IllegalStateException{
+    public Person build() throws IllegalStateException {
         if (surname == null || name == null) throw new IllegalStateException("Не все данные были указаны!");
         return new Person(name, surname, city, age);
     }

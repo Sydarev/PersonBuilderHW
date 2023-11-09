@@ -2,14 +2,14 @@ package ru.netology;
 
 public class Person {
     protected String name, surname, city;
-    protected Integer age;
+    protected int age;
 
     public Person(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
 
-    public Person(String name, String surname, Integer age) {
+    public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -20,11 +20,6 @@ public class Person {
         this.surname = surname;
         this.city = city;
         this.age = age;
-    }
-
-    public boolean hasAge() {
-        if (age != null) return false;
-        return true;
     }
 
     public boolean hasAddress() {
@@ -44,7 +39,7 @@ public class Person {
         return city;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
