@@ -1,8 +1,10 @@
 package ru.netology;
 
+import java.util.OptionalInt;
+
 public class Person {
     protected String name, surname, city;
-    protected int age;
+    protected OptionalInt age;
 
     public Person(String name, String surname) {
         this.name = name;
@@ -12,14 +14,14 @@ public class Person {
     public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
-        this.age = age;
+        this.age = OptionalInt.of(age);
     }
 
     public Person(String name, String surname, String city, int age) {
         this.name = name;
         this.surname = surname;
         this.city = city;
-        this.age = age;
+        this.age = OptionalInt.of(age);
     }
 
     public boolean hasAddress() {
@@ -40,7 +42,7 @@ public class Person {
     }
 
     public int getAge() {
-        return age;
+        return age.getAsInt();
     }
 
     public void setCity(String city) {
@@ -53,7 +55,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", city='" + city + '\'' +
-                ", age=" + age +
+                ", age=" + age.getAsInt() +
                 '}';
     }
 
@@ -61,6 +63,7 @@ public class Person {
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder()
                 .setSurname(surname)
-                .setCity(city);
+                .setCity(city)
+                .setAge(age.getAsInt()-18);
     }
 }

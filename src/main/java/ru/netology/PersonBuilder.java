@@ -1,12 +1,18 @@
 package ru.netology;
 
+import java.util.OptionalInt;
+
 public class PersonBuilder {
     protected String name, surname, city;
-    protected int age;
+    protected OptionalInt age;
 
     public PersonBuilder setName(String name) {
         this.name = name;
         return this;
+    }
+
+    public int getAge() {
+        return age.getAsInt();
     }
 
     public PersonBuilder setSurname(String surname) {
@@ -21,12 +27,12 @@ public class PersonBuilder {
 
     public PersonBuilder setAge(int age) throws IllegalArgumentException {
         if (age < 0) throw new IllegalArgumentException("Возраст не может быть отрицательным!");
-        this.age = age;
+        this.age = OptionalInt.of(age);
         return this;
     }
 
     public Person build() throws IllegalStateException {
         if (surname == null || name == null) throw new IllegalStateException("Не все данные были указаны!");
-        return new Person(name, surname, city, age);
+        return new Person(name, surname, city, age.getAsInt());
     }
 }
