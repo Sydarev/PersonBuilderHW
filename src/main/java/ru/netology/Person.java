@@ -64,6 +64,6 @@ public class Person {
         return new PersonBuilder()
                 .setSurname(surname)
                 .setCity(city)
-                .setAge(age.getAsInt()-18);
+                .setAge(age.getAsInt() - 18);
     }
 }
