@@ -41,8 +41,8 @@ public class Person {
         return city;
     }
 
-    public int getAge() {
-        return age.getAsInt();
+    public OptionalInt getAge() {
+        return age;
     }
 
     public void setCity(String city) {

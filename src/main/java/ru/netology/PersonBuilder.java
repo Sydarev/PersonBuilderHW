@@ -11,8 +11,8 @@ public class PersonBuilder {
         return this;
     }
 
-    public int getAge() {
-        return age.getAsInt();
+    public OptionalInt getAge() {
+        return age;
     }
 
     public PersonBuilder setSurname(String surname) {
