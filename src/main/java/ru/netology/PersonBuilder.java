@@ -12,6 +12,7 @@ public class PersonBuilder {
     }
 
     public OptionalInt getAge() {
+        if (age == null) return age.empty();
         return age;
     }
 
